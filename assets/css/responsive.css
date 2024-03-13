@@ -1,0 +1,31 @@
+@media (max-width: 580px){
+    #categories .items-block{
+        display: grid !important;
+        grid-template-columns: repeat(2, minmax(200px, 300px));
+    }
+}
+
+@media (max-width: 480px){
+
+    #categories .items-block{
+        grid-template-columns: repeat(1, minmax(200px, 300px));
+        justify-items: center;
+    }
+
+    #categories .items-block .menu-item{
+        width: 100% !important;
+        max-width: 250px !important;
+        min-height: 300px;
+    }
+
+    #categories .items-block .menu-item .img-block{
+        min-height: 200px !important;
+        margin-bottom: 20px;
+    }
+
+}
+
+
+
+
+
