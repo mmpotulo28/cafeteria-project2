@@ -79,12 +79,13 @@
   display: block;
   box-shadow: 0px 0px 10px 0 grey;
   padding-top: 20px;
+  overflow: hidden;
 }
 
 #recommended .items-block{
   width: fit-content;
   margin: auto !important;
-  max-width: 90% !important;
+  max-width: 80% !important;
 }
 
 .items-block {
@@ -194,9 +195,9 @@
 #categories .category-block .category {
   display: block;
   background-color: var(--prim-color);
-  padding: 5px 15px;
+  padding: 5px 10px;
   color: white;
-  font-size: 17px;
+  font-size: 15px;
   border-radius: 10px;
   box-shadow: 2px 2px 4px 0 grey;
   z-index: 2;
@@ -204,6 +205,8 @@
 
 #categories .category:hover {
   scale: 1.1;
+  background-color: white;
+  color: var(--prim-color);
 }
 
 #categories .items-block {
