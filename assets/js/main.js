@@ -1,24 +1,8 @@
-const sliderObject = {
-  sliders: document.querySelector("#menu-slider"),
-  slides: document.querySelectorAll(".slider-block"),
-  speed: 1,
-};
+import { sliderObject, updatesObject } from "./helpers/dom_elements.js";
 
-const updatesObject = {
-  updateContainer: document.querySelector(".update-cont"),
-  updateMsgs: document.querySelectorAll(".update-msg"),
-  speed: 2,
-};
+const colors = ["green", "pink", "orange", "purple", "lightblue"];
 
-function setSlides() {
-  sliderObject.slides[0].style.backgroundColor = "lightgrey";
-  sliderObject.slides[1].style.backgroundColor = "lightgreen";
-  sliderObject.slides[2].style.backgroundColor = "orange";
-}
-
-setSlides();
-
-function animateSliders(container, elements, speed) {
+function horizontalAnimation(container, elements, speed) {
   //   calculate the total width of the slides
   let totalWidth = 0;
   elements.forEach((slide) => {
@@ -49,4 +33,67 @@ function animateSliders(container, elements, speed) {
   animationFn();
 }
 
-animateSliders(updatesObject.updateContainer, updatesObject.updateMsgs, updatesObject.speed);
+horizontalAnimation(
+  updatesObject.updateContainer,
+  updatesObject.updateMsgs,
+  updatesObject.speed
+);
+
+// animate sliders
+let position = 0;
+function setSlides() {
+  for (let i in colors) {
+    // add slide
+    sliderObject.sliders.innerHTML += `
+    <div class="slider-block" id="slider${i}">Slider ${i}</div>
+    `;
+
+    // add color to slide
+    sliderObject.slides = document.querySelectorAll(".slider-block");
+    sliderObject.slides[i].style.backgroundColor = colors[i];
+  }
+}
+
+function animateSliders(_container, elements, speed, direction) {
+  //   calculate the total width of the slides
+  let totalWidth = 0;
+  elements.forEach((slide) => {
+    totalWidth += slide.offsetWidth - 1;
+  });
+
+  totalWidth -= sliderObject.speed;
+
+  // move the slider container to the left
+  if (
+    (Math.abs(position) < totalWidth && direction == -1) ||
+    (Math.abs(position) > 0 && direction == 1)
+  ) {
+    position += speed * direction;
+    elements.forEach((slide) => {
+      slide.style.transform = `translateX(${position}px)`;
+    });
+  }
+}
+
+/***************Monitor Slider clicks ***************/
+if (sliderObject.sliders) {
+  setSlides();
+  sliderObject.speed = sliderObject.slides[0].offsetWidth;
+  sliderObject.btnLeft.addEventListener("click", () => {
+    animateSliders(
+      sliderObject.sliders,
+      sliderObject.slides,
+      sliderObject.speed,
+      1
+    );
+  });
+
+  sliderObject.btnRight.addEventListener("click", () => {
+    animateSliders(
+      sliderObject.sliders,
+      sliderObject.slides,
+      sliderObject.speed,
+      -1
+    );
+  });
+}
