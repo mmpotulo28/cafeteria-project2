@@ -21,4 +21,58 @@ const setDomItem = ({ className, item }) => {
   return domItem;
 };
 
-export { setDomItem };
+const setViewItem = ({ item }) => {
+  const domItem = `
+    <div class="view-item">
+          <div class="top-block">
+            <h2 class="item-name">${item.name}</h2>
+            <p class="item-status">${item.status}</p>
+          </div>
+
+          <div class="main-block">
+            <div class="img-block">
+              <img src="" alt="" />
+            </div>
+
+            <div class="item-config">
+              <form id="item-config-form">
+                <div class="form-group">
+                  <label for="sauce">Sauce: </label>
+                  <select name="sauce" id="sauce">
+                    <option value="chip">chip sauce</option>
+                    <option value="bbq">BBQ</option>
+                    <option value="chilli">chilli</option>
+                    <option value="tomato">tomato</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="quantity">Quantity: </label>
+                  <input min="0" max="10" type="number">
+                </div>
+
+                <div class="form-group">
+                  <label for="plastic">Plastic: </label>
+                  <input name="plastic"type="checkbox" checked>
+                </div>
+
+                <div class="form-group">
+                  <label for="total">total: </label>
+                  <p>R${item.price}</p>
+                </div>
+
+                <div class="form-group">
+                  <button class="clickable" type="submit">Place Order</button>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          .
+        </div>
+    `;
+
+    return domItem
+};
+
+export { setDomItem, setViewItem };

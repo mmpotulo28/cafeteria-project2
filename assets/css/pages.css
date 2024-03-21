@@ -1,0 +1,102 @@
+.not-clickable {
+    opacity: 0.3;
+}
+
+.clickable{
+    opacity: 1;
+}
+
+.view-item-block {
+    display: block;
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    border-top: 2px solid var(--prim-color);
+}
+
+.view-item-block .view-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--sec-color);
+    width: fit-content;
+    min-width: 80%;
+    margin: auto;
+}
+
+.view-item-block .view-item .top-block {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    border-bottom: 2px solid var(--prim-color);
+    max-width: 95%;
+    min-width: 95%;
+    margin: auto;
+    color: var(--prim-color);
+}
+
+.view-item-block .view-item .top-block .item-status {
+    display: block;
+    color: red;
+    padding: 5px;
+}
+
+.view-item-block .view-item .main-block {
+    display: flex;
+    flex-direction: row;
+    margin: 10px;
+}
+
+.view-item-block .view-item .main-block .img-block {
+    display: block;
+    background-color: lightgrey;
+    min-height: 150px;
+    min-width: 200px;
+    margin: 10px;
+}
+
+.view-item-block .view-item .main-block .item-config {
+    padding: 10px;
+    font-size: 19px;
+    min-width: 200px;
+}
+
+.view-item-block .view-item .main-block .item-config #item-config-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.view-item-block .view-item .main-block .item-config #item-config-form .form-group input {
+    width: 50px;
+    font-size: inherit;
+    border: 1px solid var(--prim-color);
+    border-radius: 10px;
+    outline: none;
+    padding: 2px;
+    text-align: center;
+}
+
+.view-item-block .view-item .main-block .item-config #item-config-form .form-group select {
+    height: 30px;
+    font-size: inherit;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+}
+
+.item-config #item-config-form .form-group button {
+    font-size: inherit;
+    border: none;
+    background-color: var(--prim-color);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.item-config #item-config-form .form-group button:hover {
+    background-color: var(--sec-color);
+    color: var(--prim-color);
+    font-weight: bold;
+}
