@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../assets/css/style.css" />
-    <link rel="stylesheet" href="../assets/css/pages.css">
+    <link rel="stylesheet" href="../assets/css/pages.css" />
     <link rel="stylesheet" href="../assets/css/responsive.css" />
     <title>Cafeteria</title>
   </head>
@@ -12,10 +12,10 @@
     <header>
       <nav class="main-nav">
         <ul class="nav-items">
-          <li class="nav-item">Home</li>
-          <li class="nav-item">Login</li>
-          <li class="nav-item">Profile</li>
-          <li class="nav-item">Contacts</li>
+          <a href="../index.html"><li class="nav-item">Home</li></a>
+          <a href="#"><li class="nav-item">Login</li></a>
+          <a href="#"><li class="nav-item">Profile</li></a>
+          <a href="#"><li class="nav-item">Contacts</li></a>
         </ul>
         <span id="nav-line"></span>
       </nav>
@@ -32,10 +32,24 @@
     </header>
 
     <main>
-      <section class="view-item-block">
-        
+      <section class="view-item-block"></section>
+      <section class="similar-items-sec">
+        <div class="top-block">
+          <h1 class="sec-heading" id="similar-item-heading">Similar Items</h1>
+          <div class="btns-block">
+            <button class="similar-btn"><</button>
+            <button class="similar-btn">></button>
+          </div>
+        </div>
+        <div class="items-block"></div>
       </section>
     </main>
+
+    <footer class="main-footer">
+      <ul class="footer-items">
+        <li class="footer-item">&copy; M Mpotulo 2024</li>
+      </ul>
+    </footer>
 
     <script type="module" src="../assets/js/main.js"></script>
     <script type="module" src="../assets/js/page-js/view-item.js"></script>

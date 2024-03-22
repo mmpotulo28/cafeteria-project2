@@ -1,4 +1,4 @@
-const setDomItem = ({ className, item }) => {
+const setDomItem = ({ className, item, btnClass }) => {
   const domItem = `
     <div class="${className}" id="${item.id}">
             <div class="status-block">
@@ -12,8 +12,8 @@ const setDomItem = ({ className, item }) => {
             <div class="details">
                 <a href="./pages/view-item.html?id=${item.id}"><h2 class="item-name">${item.name}</h2></a>
                 <div class="buttons">
-                    <a href="./pages/view-item.html?id=${item.id}"><button class="add-to-cart-btn">order</button></a>
-                    <button class="price-btn">R${item.price}</button>
+                <button class="price-btn">R${item.price}</button>
+                    <a href="./pages/view-item.html?id=${item.id}"><button class="add-to-cart-btn ${btnClass}">order</button></a>
                 </div>
             </div>
     `;
@@ -21,7 +21,7 @@ const setDomItem = ({ className, item }) => {
   return domItem;
 };
 
-const setViewItem = ({ item }) => {
+const setViewItem = ({ item, btnClass }) => {
   const domItem = `
     <div class="view-item">
           <div class="top-block">
@@ -62,7 +62,7 @@ const setViewItem = ({ item }) => {
                 </div>
 
                 <div class="form-group">
-                  <button class="clickable" type="submit">Place Order</button>
+                  <button class="${btnClass}" type="submit">Place Order</button>
                 </div>
               </form>
             </div>

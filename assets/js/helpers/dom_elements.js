@@ -16,7 +16,8 @@ const updatesObject = {
 const itemsBlock = {
   recommendedItemDom: document.querySelector('#recommended > .items-block'),
   categoriesItemDom: document.querySelector('#categories > .items-block'),
-  viewItemDom: document.querySelector('.view-item-block')
+  viewItemDom: document.querySelector('.view-item-block'),
+  similarItems: document.querySelector('.similar-items-sec > .items-block')
 }
 
 export { sliderObject, updatesObject, itemsBlock };

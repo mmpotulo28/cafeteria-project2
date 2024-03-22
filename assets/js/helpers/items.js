@@ -6,7 +6,7 @@ const items = [
     status: "out-off-stock",
     img: "./path-to-img/jpg",
     recommended: true,
-    category: ""
+    category: "Hot Stuff"
   },
   {
     id: 2,
@@ -15,7 +15,7 @@ const items = [
     status: "in-stock",
     img: "./path-to-img/jpg",
     recommended: false,
-    category: ""
+    category: "Hot Stuff"
   },
   {
     id: 3,
@@ -24,7 +24,7 @@ const items = [
     status: "in-stock",
     img: "./path-to-img/jpg",
     recommended: false,
-    category: ""
+    category: "null"
   },
   {
     id: 4,
@@ -33,7 +33,7 @@ const items = [
     status: "out-off-stock",
     img: "./path-to-img/jpg",
     recommended: true,
-    category: ""
+    category: "null"
   },
   {
     id: 5,
@@ -42,7 +42,7 @@ const items = [
     status: "in-stock",
     img: "./path-to-img/jpg",
     recommended: true,
-    category: ""
+    category: "null"
   },
   {
     id: 6,
@@ -51,7 +51,7 @@ const items = [
     status: "in-stock",
     img: "./path-to-img/jpg",
     recommended: false,
-    category: ""
+    category: "null"
   },
   {
     id: 7,
@@ -60,7 +60,7 @@ const items = [
     status: "out-off-stock",
     img: "./path-to-img/jpg",
     recommended: true,
-    category: ""
+    category: "null"
   },
   {
     id: 8,
@@ -69,7 +69,7 @@ const items = [
     status: "in-stock",
     img: "./path-to-img/jpg",
     recommended: false,
-    category: ""
+    category: "null"
   },
   {
     id: 9,
@@ -78,7 +78,7 @@ const items = [
     status: "in-stock",
     img: "./path-to-img/jpg",
     recommended: false,
-    category: ""
+    category: "null"
   },
   {
     id: 10,
@@ -87,7 +87,7 @@ const items = [
     status: "in-stock",
     img: "./path-to-img/jpg",
     recommended: true,
-    category: ""
+    category: "null"
   },
 ];
 

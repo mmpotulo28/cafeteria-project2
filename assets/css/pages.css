@@ -1,17 +1,7 @@
-.not-clickable {
-    opacity: 0.3;
-}
-
-.clickable{
-    opacity: 1;
-}
-
 .view-item-block {
     display: block;
     max-width: 600px;
-    margin: auto;
-    padding: 20px;
-    border-top: 2px solid var(--prim-color);
+    margin: 10px;
 }
 
 .view-item-block .view-item {
@@ -21,7 +11,7 @@
     background-color: var(--sec-color);
     width: fit-content;
     min-width: 80%;
-    margin: auto;
+    margin: 20px;
 }
 
 .view-item-block .view-item .top-block {
@@ -99,4 +89,38 @@
     background-color: var(--sec-color);
     color: var(--prim-color);
     font-weight: bold;
+}
+
+/* similar items */
+.similar-items-sec {
+    display: flex;
+    flex-direction: column;
+    box-shadow: 3px 3px 4px 0 lightgrey;
+    min-height: 250px;
+}
+
+.similar-items-sec .top-block {
+    display: flex;
+    flex-direction: row;
+    width: auto;
+    border-bottom: 3px solid var(--prim-color);
+    padding: 5px 10px;
+    box-shadow: 3px 3px 4px 0 lightgrey;
+    justify-content: space-between;
+    color: var(--prim-color);
+}
+
+.btns-block .similar-btn {
+    font-size: 18px;
+    padding: 0 5px;
+    border-radius: 5px;
+    border: 2px solid var(--prim-color);
+    color: var(--prim-color);
+    background-color: var(--sec-color);
+}
+
+.btns-block .similar-btn:hover {
+    background-color: var(--prim-color);
+    color: var(--sec-color);
+    border-color: var(--sec-color);
 }
