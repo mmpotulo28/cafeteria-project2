@@ -63,7 +63,7 @@ const setViewItem = ({ item, btnClass }) => {
 
                 <div class="form-group">
                   <label for="total">total: </label>
-                  <p id="total">R${item.price * item.quantity}</p>
+                  <p id="total">R${item.price}</p>
                 </div>
 
                 <div class="form-group">

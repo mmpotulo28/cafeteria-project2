@@ -83,10 +83,12 @@ const setCartItem = () => {
   };
 
   cartItem.total = cartItem.quantity * currentItem.price;
-  //reset the html total
-  if (cartItem.total <= 0) {
-    alert("total cannot be zero or less");
-    throw new Error("total cannot be zero or less");
+  if (cartItem.total < 1 || cartItem.quantity < 1) {
+    alert("quantity and total cannot be zero or less");
+    viewItemDom.quantityDom.value = 1;
+    viewItemDom.totalDom.textContent = "R" + currentItem.price;
+    return;
   }
+
   viewItemDom.totalDom.innerText = "R" + cartItem.total;
 };

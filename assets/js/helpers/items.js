@@ -7,7 +7,6 @@ const items = [
     img: "./path-to-img/jpg",
     recommended: true,
     category: "Hot Stuff",
-    quantity: 1,
   },
   {
     id: 2,
@@ -17,7 +16,6 @@ const items = [
     img: "./path-to-img/jpg",
     recommended: false,
     category: "Hot Stuff",
-    quantity: 1,
   },
   {
     id: 3,
@@ -27,7 +25,6 @@ const items = [
     img: "./path-to-img/jpg",
     recommended: false,
     category: "null",
-    quantity: 1,
   },
   {
     id: 4,
@@ -37,7 +34,6 @@ const items = [
     img: "./path-to-img/jpg",
     recommended: true,
     category: "null",
-    quantity: 1,
   },
   {
     id: 5,
@@ -47,7 +43,6 @@ const items = [
     img: "./path-to-img/jpg",
     recommended: true,
     category: "null",
-    quantity: 1,
   },
   {
     id: 6,
@@ -57,7 +52,6 @@ const items = [
     img: "./path-to-img/jpg",
     recommended: false,
     category: "null",
-    quantity: 1,
   },
   {
     id: 7,
@@ -67,7 +61,6 @@ const items = [
     img: "./path-to-img/jpg",
     recommended: true,
     category: "null",
-    quantity: 1,
   },
   {
     id: 8,
@@ -77,7 +70,6 @@ const items = [
     img: "./path-to-img/jpg",
     recommended: false,
     category: "null",
-    quantity: 1,
   },
   {
     id: 9,
@@ -87,7 +79,6 @@ const items = [
     img: "./path-to-img/jpg",
     recommended: false,
     category: "null",
-    quantity: 1,
   },
   {
     id: 10,
@@ -97,7 +88,6 @@ const items = [
     img: "./path-to-img/jpg",
     recommended: true,
     category: "null",
-    quantity: 1,
   },
 ];
 

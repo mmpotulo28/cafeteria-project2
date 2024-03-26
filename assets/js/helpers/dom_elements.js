@@ -9,15 +9,20 @@ const sliderObject = {
 
 const updatesObject = {
   updateContainer: document.querySelector(".update-cont"),
-  updateMsgs: document.querySelectorAll(".update-msg"),
+  updateMsgs: () => {
+    return document.querySelectorAll(".update-msg");
+  },
+  updateMsg: (message) => {
+    return `<p class="update-msg">${message}</p>`;
+  },
   speed: 2,
 };
 
 const itemsBlock = {
-  recommendedItemDom: document.querySelector('#recommended > .items-block'),
-  categoriesItemDom: document.querySelector('#categories > .items-block'),
-  viewItemDom: document.querySelector('.view-item-block'),
-  similarItems: document.querySelector('.similar-items-sec > .items-block')
-}
+  recommendedItemDom: document.querySelector("#recommended > .items-block"),
+  categoriesItemDom: document.querySelector("#categories > .items-block"),
+  viewItemDom: document.querySelector(".view-item-block"),
+  similarItems: document.querySelector(".similar-items-sec > .items-block"),
+};
 
 export { sliderObject, updatesObject, itemsBlock };

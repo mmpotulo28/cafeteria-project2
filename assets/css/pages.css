@@ -142,3 +142,41 @@
     color: var(--sec-color);
     border-color: var(--sec-color);
 }
+
+/* View Cart */
+#view-cart-sec {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 95%;
+    background-color: var(--tet-color);
+    padding: 20px;
+    margin: auto;
+    max-width: calc(95% - 40px);
+    overflow-y: hidden;
+    overflow-x: auto;
+    border-radius: 10px;
+}
+
+#view-cart-sec .cart-table {
+    display: table;
+    text-align: center;
+    width: 100%;
+    max-width: 800px;
+    min-width: 500px !important;
+    margin: auto;
+    box-shadow: 2px 3px 7px 0 var(--forth-color);
+    font-size: 18px;
+    border: 2px solid var(--prim-color);
+    background-color: var(--sec-color);
+}
+
+#view-cart-sec .cart-table thead tr {
+    background-color: var(--prim-color);
+    color: var(--sec-color);
+}
+
+#view-cart-sec .cart-table tbody tr td{
+    display: table-cell;
+    min-height: 500px;
+}

@@ -1,6 +1,20 @@
 import { sliderObject, updatesObject } from "./helpers/dom_elements.js";
 
 const colors = ["green", "pink", "orange", "purple", "lightblue"];
+const updates = [
+  "tonight we are closing at 18:00",
+  "vetkooks are out of stock",
+  "Special: score is now R10",
+  "Use your Barcode to collect your order",
+  "No cash will be accepted for online orders",
+];
+
+function setUpdateMessage() {
+  updates.forEach((update) => {
+    updatesObject.updateContainer.innerHTML += updatesObject.updateMsg(update);
+  });
+}
+setUpdateMessage();
 
 function horizontalAnimation(container, elements, speed) {
   //   calculate the total width of the slides
@@ -35,7 +49,7 @@ function horizontalAnimation(container, elements, speed) {
 
 horizontalAnimation(
   updatesObject.updateContainer,
-  updatesObject.updateMsgs,
+  updatesObject.updateMsgs(),
   updatesObject.speed
 );
 
