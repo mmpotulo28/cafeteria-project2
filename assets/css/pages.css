@@ -1,7 +1,9 @@
 .view-item-block {
     display: block;
-    max-width: 600px;
+    position: relative;
     margin: 10px;
+    max-width: 800px;
+    overflow: hidden;
 }
 
 .view-item-block .view-item {
@@ -9,9 +11,11 @@
     flex-direction: column;
     justify-content: center;
     background-color: var(--sec-color);
-    width: fit-content;
+    width: 98%;
     min-width: 80%;
-    margin: 20px;
+    margin: 20px 0;
+    border-radius: 10px;
+    box-shadow: 3px 2px 8px 0 var(--prim-color);
 }
 
 .view-item-block .view-item .top-block {
@@ -29,26 +33,33 @@
     display: block;
     color: red;
     padding: 5px;
+    background-color: var(--tet-color);
+    border-radius: 20px;
 }
 
 .view-item-block .view-item .main-block {
     display: flex;
     flex-direction: row;
     margin: 10px;
+    gap: 30px;
 }
 
 .view-item-block .view-item .main-block .img-block {
     display: block;
-    background-color: lightgrey;
+    background-color: var(--tet-color);
     min-height: 150px;
     min-width: 200px;
     margin: 10px;
+    flex-grow: 2;
+    aspect-ratio: 1;
+    max-width: 300px;
 }
 
 .view-item-block .view-item .main-block .item-config {
     padding: 10px;
     font-size: 19px;
     min-width: 200px;
+    flex-grow: 1;
 }
 
 .view-item-block .view-item .main-block .item-config #item-config-form {
@@ -65,6 +76,13 @@
     outline: none;
     padding: 2px;
     text-align: center;
+}
+
+.view-item-block .view-item .main-block .item-config #item-config-form .form-group #total {
+    color: var(--prim-color);
+    font-size: 22px;
+    font-weight: bold;
+    display: inline;
 }
 
 .view-item-block .view-item .main-block .item-config #item-config-form .form-group select {
@@ -95,7 +113,7 @@
 .similar-items-sec {
     display: flex;
     flex-direction: column;
-    box-shadow: 3px 3px 4px 0 lightgrey;
+    box-shadow: 3px 3px 4px 0 var(--tet-color);
     min-height: 250px;
 }
 
@@ -105,7 +123,7 @@
     width: auto;
     border-bottom: 3px solid var(--prim-color);
     padding: 5px 10px;
-    box-shadow: 3px 3px 4px 0 lightgrey;
+    box-shadow: 3px 3px 4px 0 var(--tet-color);
     justify-content: space-between;
     color: var(--prim-color);
 }

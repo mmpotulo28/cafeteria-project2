@@ -1,4 +1,9 @@
-const setDomItem = ({ className, item, btnClass }) => {
+const setDomItem = ({
+  className,
+  item,
+  btnClass = "clickable",
+  path = ".",
+}) => {
   const domItem = `
     <div class="${className}" id="${item.id}">
             <div class="status-block">
@@ -10,10 +15,10 @@ const setDomItem = ({ className, item, btnClass }) => {
             </div>
             
             <div class="details">
-                <a href="./pages/view-item.html?id=${item.id}"><h2 class="item-name">${item.name}</h2></a>
+                <a href="${path}/pages/view-item.html?id=${item.id}"><h2 class="item-name">${item.name}</h2></a>
                 <div class="buttons">
                 <button class="price-btn">R${item.price}</button>
-                    <a href="./pages/view-item.html?id=${item.id}"><button class="add-to-cart-btn ${btnClass}">order</button></a>
+                    <a href="${path}/pages/view-item.html?id=${item.id}"><button class="add-to-cart-btn ${btnClass}">order</button></a>
                 </div>
             </div>
     `;
@@ -38,7 +43,7 @@ const setViewItem = ({ item, btnClass }) => {
               <form id="item-config-form">
                 <div class="form-group">
                   <label for="sauce">Sauce: </label>
-                  <select name="sauce" id="sauce">
+                  <select class="form-input" name="sauce" id="sauce">
                     <option value="chip">chip sauce</option>
                     <option value="bbq">BBQ</option>
                     <option value="chilli">chilli</option>
@@ -48,17 +53,17 @@ const setViewItem = ({ item, btnClass }) => {
 
                 <div class="form-group">
                   <label for="quantity">Quantity: </label>
-                  <input min="0" max="10" type="number">
+                  <input class="form-input" min="1" max="10" type="number" value="1" id="quantity">
                 </div>
 
                 <div class="form-group">
                   <label for="plastic">Plastic: </label>
-                  <input name="plastic"type="checkbox" checked>
+                  <input class="form-input" name="plastic" type="checkbox" id="plastic">
                 </div>
 
                 <div class="form-group">
                   <label for="total">total: </label>
-                  <p>R${item.price}</p>
+                  <p id="total">R${item.price * item.quantity}</p>
                 </div>
 
                 <div class="form-group">
@@ -67,12 +72,10 @@ const setViewItem = ({ item, btnClass }) => {
               </form>
             </div>
           </div>
-
-          .
         </div>
     `;
 
-    return domItem
+  return domItem;
 };
 
 export { setDomItem, setViewItem };

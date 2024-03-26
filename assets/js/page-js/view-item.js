@@ -3,7 +3,7 @@ import { items } from "../helpers/items.js";
 import { itemsBlock } from "../helpers/dom_elements.js";
 import { setDomItem } from "../helpers/helper_functions.js";
 
-let itemID = 0
+let itemID = 0;
 
 if (window.location.href.indexOf("id") == -1) {
   alert("invalid item id");
@@ -14,21 +14,24 @@ if (window.location.href.indexOf("id") == -1) {
 let currentItem = "",
   btnClass = "";
 
-// get current item
-items.map((item) => {
-  if (item.id == itemID) {
-    currentItem = item;
-    item.status == "in-stock"
-      ? (btnClass = "clickable")
-      : (btnClass = "not-clickable");
+const setCurrentItem = () => {
+  // get current item
+  items.map((item) => {
+    if (item.id == itemID) {
+      currentItem = item;
+      item.status == "in-stock"
+        ? (btnClass = "clickable")
+        : (btnClass = "not-clickable");
 
-    itemsBlock.viewItemDom.innerHTML = setViewItem({
-      item: currentItem,
-      btnClass,
-    });
-    return;
-  }
-});
+      itemsBlock.viewItemDom.innerHTML = setViewItem({
+        item: currentItem,
+        btnClass,
+      });
+
+      return;
+    }
+  });
+};
 
 // set similar items
 const setSimilarItems = () => {
@@ -45,8 +48,45 @@ const setSimilarItems = () => {
       className: "similar-item item-card",
       item,
       btnClass,
+      path: "..",
     });
   });
 };
 
+// call functions by order
+setCurrentItem();
 setSimilarItems();
+
+// get form values
+const viewItemDom = {
+  form: document.querySelector("#item-config-form"),
+  sauceDom: document.querySelector("#item-config-form #sauce"),
+  quantityDom: document.querySelector("#item-config-form #quantity"),
+  plasticDom: document.querySelector("#item-config-form #plastic"),
+  totalDom: document.querySelector("#item-config-form #total"),
+  formInput: document.querySelectorAll(".form-input"),
+};
+
+viewItemDom.formInput.forEach((input) => {
+  input.onchange = () => {
+    setCartItem();
+  };
+});
+
+const setCartItem = () => {
+  const cartItem = {
+    id: itemID,
+    sauce: viewItemDom.sauceDom.value,
+    quantity: viewItemDom.quantityDom.value,
+    plastic: viewItemDom.plasticDom.value,
+    total: viewItemDom.totalDom.innerText,
+  };
+
+  cartItem.total = cartItem.quantity * currentItem.price;
+  //reset the html total
+  if (cartItem.total <= 0) {
+    alert("total cannot be zero or less");
+    throw new Error("total cannot be zero or less");
+  }
+  viewItemDom.totalDom.innerText = "R" + cartItem.total;
+};
